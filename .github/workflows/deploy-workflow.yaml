@@ -3,9 +3,6 @@ name: Build and Deploy with Helm using Docker Hub
 on:
   workflow_dispatch:
 
-env:
-  IMAGE_NAME: foaad                           # 👈 name of your image
-
 jobs:
   docker-build:
     name: docker build
