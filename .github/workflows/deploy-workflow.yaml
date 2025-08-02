@@ -74,7 +74,7 @@ jobs:
     - name: Verify Deployment
       run: |
        echo "### Checking Rollout Status ###"
-       kubectl rollout status deployment/flask-kubernetes-deployment --namespace foaad --kubeconfig kubeconfig || true
+       kubectl rollout status deployment/flask-kubernetes-release-deployment --namespace foaad --kubeconfig kubeconfig || true
     
        echo "### Checking Pods ###"
        kubectl get pods -l place=iti,name=foaad -o wide --namespace foaad --kubeconfig kubeconfig 
@@ -86,7 +86,7 @@ jobs:
        kubectl get svc -l place=iti,name=foaad --namespace foaad --kubeconfig kubeconfig
 
        echo "### Helm Resources ###"
-       helm get manifest flask-kubernetes --namespace foaad --kubeconfig kubeconfig
+       helm get manifest flask-kubernetes-release --namespace foaad --kubeconfig kubeconfig
     
        echo "### Helm Status ###"
-       helm status flask-kubernetes --namespace foaad --kubeconfig kubeconfig
+       helm status flask-kubernetes-release --namespace foaad --kubeconfig kubeconfig
