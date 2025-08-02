@@ -1,0 +1,19 @@
+replicaCount: 2
+namespace: foaad
+image:
+  image:
+  repository: ${{ vars.USER_NAME}}/flask-kubernetes
+  pullPolicy: Always
+  tag: ${ github.sha }
+
+service:
+  type: LoadBalancer
+  port: 80
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 64Mi
