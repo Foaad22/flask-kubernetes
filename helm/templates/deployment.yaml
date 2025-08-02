@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment
   labels:
-    {{ include "flask-kubernetes.labels" . | indent 4 }}
+    {{- include "flask-kubernetes.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{ include "flask-kubernetes.labels" . | indent 6 }}
+      {{ include "flask-kubernetes.labels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{ include "flask-kubernetes.labels" . | indent 8 }}
+        {{ include "flask-kubernetes.labels" . | nindent 8 }}
     spec:
       containers:
         - name: flask-container
