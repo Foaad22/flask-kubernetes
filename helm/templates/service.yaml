@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-service
   labels:
-    {{ include "flask-kubernetes.labels" . | indent 4 }}
+    {{ include "flask-kubernetes.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   selector:
