@@ -69,7 +69,7 @@ jobs:
         kubectl describe pods -l place=iti,name=foaad --namespace foaad --kubeconfig kubeconfig
         
         echo "## Deployment Events ##"
-        kubectl describe deployment flask-kubernetes-deployment --namespace foaad --kubeconfig kubeconfig
+        kubectl describe deployment flask-kubernetes-release-deployment --namespace foaad --kubeconfig kubeconfig
 
     - name: Verify Deployment
       run: |
